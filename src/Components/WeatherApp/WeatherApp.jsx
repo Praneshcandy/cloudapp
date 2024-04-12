@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./WeatherApp.css";
 
 import search_icon from "../Assets/search.png";
 import clear_icon from "../Assets/clear.png";
@@ -61,41 +60,44 @@ const WeatherApp = () => {
     }
   };
   return (
-    <div className="container">
-      <div className="top-bar">
+    <div className="container w-full h-screen mx-auto mt-75 rounded-lg bg-purple-800">
+      <div className="top-bar flex justify-center items-center gap-8 pt-10">
         <input
           type="text"
-          className="cityInput"
+          className="cityInput flex w-96 h-16 bg-white border-none outline-none rounded-full pl-10 text-gray-600 text-lg font-normal"
           placeholder="Search for city"
         />
         <div
-          className="search_icon"
+          className="search_icon flex justify-center items-center w-16 h-16 bg-white rounded-full cursor-pointer"
           onClick={() => {
             search();
           }}
         >
-          <img src={search_icon} alt="Image" />
+          <img src={search_icon} alt="Search Icon" className="" />
         </div>
       </div>
-      <div className="weather-image">
-        <img src={wicon} alt="" />
+      <div className="weather-image mt-10 flex justify-center">
+        <img src={wicon} alt="Weather Icon" />
       </div>
-      <div className="weather-temp">24°C</div>
-      <div className="weather-location">London</div>
-      <div className="data-container">
-        <div className="element">
-          <img src={humidity_icon} alt="" className="icons" />
+      <div className="weather-temp flex justify-center text-white text-6xl font-normal">
+        24°C
+      </div>
+      <div className="weather-location flex justify-center text-white text-4xl font-normal">
+        London
+      </div>
+      <div className="data-container mt-10 text-white flex justify-center gap-10">
+        <div className="element flex items-center gap-4">
+          <img src={humidity_icon} alt="Humidity Icon" className="icons" />
           <div className="data">
             <div className="humidity-percent">64%</div>
-            <div className="text">Humidity</div>
+            <div className="text-base font-normal">Humidity</div>
           </div>
         </div>
-
-        <div className="element">
-          <img src={wind_icon} alt="" className="icons" />
+        <div className="element flex items-center gap-4">
+          <img src={wind_icon} alt="Wind Icon" className="icons" />
           <div className="data">
             <div className="wind-rate">18km/h</div>
-            <div className="text">Wind Speed</div>
+            <div className="text-base font-normal">Wind Speed</div>
           </div>
         </div>
       </div>
